@@ -3,7 +3,7 @@ function Hero() {
     <section id="home" className="hero">
 
       <div className="container">
-        <div className="row align-items-center min-vh-100">
+        <div className="row align-items-center min-vh-auto">
 
           <div className="col-lg-7">
 
@@ -12,8 +12,6 @@ function Hero() {
                 alt="SMCET"
                 className="smcet-logo"
               />
-
-            
 
             <h1>
               STANI TECH MANTHAN
@@ -43,7 +41,7 @@ function Hero() {
             <div className="event-info">
 
               <div>
-                <strong>📅 Date</strong>
+                <strong>📅 15 SEPT 2026</strong>
                 <span>Coming Soon</span>
               </div>
 
@@ -61,26 +59,14 @@ function Hero() {
 
           </div>
 
-          <div className="col-lg-5 text-center">
-
-            <div className="logo-card">
-
-              <img
-                src="/innoverse-logo.jpg"
-                alt="Innoverse Technical Club"
-              />
-
-              <h3>Innoverse Technical Club</h3>
-
-            </div>
+         
 
           </div>
 
         </div>
-      </div>
+      
 
     </section>
   );
 }
-
 export default Hero;

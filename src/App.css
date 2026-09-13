@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
+
+/* =====================================================
+   ROOT VARIABLES
+   ===================================================== */
 :root {
   --primary: #00d9ff;
   --secondary: #6c63ff;
@@ -6,16 +11,45 @@
   --text-muted: #aab4c8;
 }
 
-/* BASE / GLOBAL FIXES */
+/* =====================================================
+   GLOBAL
+   ===================================================== */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* NAVBAR */
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  background: var(--dark);
+  color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
 .navbar {
   background: rgba(5, 11, 24, 0.95);
   backdrop-filter: blur(15px);
@@ -28,6 +62,7 @@ body {
   object-fit: contain;
   border-radius: 50%;
   background: white;
+  flex-shrink: 0;
 }
 
 .brand-text {
@@ -56,16 +91,32 @@ body {
   color: var(--primary) !important;
 }
 
-
-/* HERO */
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
 .hero {
-  min-height: 100vh;
+  width: 100%;
   background:
-    radial-gradient(circle at 80% 40%, rgba(0, 217, 255, 0.15), transparent 30%),
-    radial-gradient(circle at 20% 80%, rgba(108, 99, 255, 0.15), transparent 30%),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(0, 217, 255, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(108, 99, 255, 0.15),
+      transparent 30%
+    ),
     var(--dark);
-  padding-top: 90px;
-  padding-bottom: 50px;
+  padding: 70px 0 30px;
+}
+
+.smcet-logo {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
 .event-badge {
@@ -80,9 +131,11 @@ body {
 
 .hero h1 {
   font-family: "Orbitron", sans-serif;
-  font-size: clamp(38px, 7vw, 90px);
+  font-size: clamp(40px, 7vw, 90px);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hero h1 span {
@@ -91,7 +144,7 @@ body {
 }
 
 .hero-tagline {
-  font-size: clamp(20px, 3vw, 26px);
+  font-size: clamp(18px, 3vw, 26px);
   font-weight: 600;
   margin-top: 20px;
 }
@@ -101,6 +154,7 @@ body {
   max-width: 600px;
   font-size: 16px;
   line-height: 1.7;
+  margin-top: 12px;
 }
 
 .hero-buttons {
@@ -126,7 +180,7 @@ body {
 .event-info {
   display: flex;
   gap: 25px;
-  margin-top: 40px;
+  margin-top: 35px;
   flex-wrap: wrap;
 }
 
@@ -145,9 +199,11 @@ body {
   font-size: 14px;
 }
 
-
-/* LOGO CARD */
+/* =====================================================
+   INNOVERSE LOGO CARD
+   ===================================================== */
 .logo-card {
+  width: 100%;
   padding: 30px;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.04);
@@ -159,8 +215,16 @@ body {
 .logo-card img {
   width: 75%;
   max-width: 300px;
+  height: auto;
+  margin: 0 auto;
   border-radius: 12px;
   background: white;
+  display: block;
+}
+
+.logo-card h3 {
+  margin-top: 8px;
+  font-size: 20px;
 }
 
 .logo-card .plus {
@@ -171,14 +235,15 @@ body {
 
 .logo-card .smcet-logo {
   max-width: 180px;
-  max-height: 110px;
+  max-height: 120px;
   object-fit: contain;
 }
 
-
-/* SECTIONS */
+/* =====================================================
+   SECTIONS & CARDS
+   ===================================================== */
 .section-padding {
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 .problems-section {
@@ -188,6 +253,7 @@ body {
 .section-title {
   text-align: center;
   margin-bottom: 40px;
+  padding: 0 15px;
 }
 
 .section-title span {
@@ -199,22 +265,24 @@ body {
 
 .section-title h2 {
   font-family: "Orbitron", sans-serif;
-  font-size: clamp(26px, 4vw, 42px);
+  font-size: clamp(24px, 4vw, 42px);
   margin-top: 10px;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
-
-/* FEATURE CARDS */
-.feature-card {
-  background: var(--card);
-  padding: 30px 25px;
-  border-radius: 18px;
+.feature-card,
+.problem-card {
   height: 100%;
+  background: var(--card);
+  padding: 25px 20px;
+  border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: 0.3s;
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.problem-card:hover {
   transform: translateY(-5px);
   border-color: var(--primary);
 }
@@ -224,61 +292,26 @@ body {
   margin-bottom: 15px;
 }
 
-.feature-card h3 {
-  margin-bottom: 12px;
-  font-size: 20px;
-}
-
-.feature-card p {
-  color: var(--text-muted);
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-
-/* PROBLEM CARDS */
-.problem-card {
-  background: var(--card);
-  padding: 30px 25px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  height: 100%;
-  transition: 0.3s;
-}
-
-.problem-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-}
-
 .problem-number {
   color: var(--primary);
   font-weight: 800;
   font-family: "Orbitron", sans-serif;
 }
 
-.problem-card h3 {
-  margin: 12px 0;
-  font-size: 20px;
-}
-
-.problem-card p {
-  color: var(--text-muted);
-  line-height: 1.6;
-  font-size: 14px;
-}
-
 .problem-card a {
   color: var(--primary);
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
-
-/* REGISTRATION */
+/* =====================================================
+   REGISTRATION & FORM
+   ===================================================== */
 .registration-box {
+  width: 100%;
   max-width: 900px;
-  margin: auto;
-  padding: 35px 30px;
+  margin: 0 auto;
+  padding: 30px 20px;
   background: var(--card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
@@ -293,11 +326,12 @@ body {
 
 .form-control,
 .form-select {
+  width: 100%;
   background: #101b30;
   border: 1px solid #263552;
   color: white;
   padding: 11px 14px;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 8px;
 }
 
@@ -313,15 +347,46 @@ body {
   color: #71809b;
 }
 
-.form-check-label {
-  color: var(--text-muted);
-  font-size: 14px;
+.member-box {
+  padding: 18px;
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(0, 217, 255, 0.03);
 }
 
+.member-box h5 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 16px;
+}
 
-/* FOOTER */
+/* =====================================================
+   LIVE PROBLEM & QUIZ
+   ===================================================== */
+.live-problem-card,
+.quiz-access-card,
+.quiz-card,
+.quiz-result-card {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(0, 217, 255, 0.04);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.08);
+}
+
+.quiz-access-card {
+  max-width: 500px;
+  text-align: center;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 footer {
-  padding: 40px 0 20px;
+  padding: 40px 15px 20px;
   background: #030711;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
@@ -333,7 +398,7 @@ footer {
   object-fit: contain;
   border-radius: 50%;
   background: white;
-  margin-bottom: 12px;
+  margin: 0 auto 12px;
 }
 
 footer h3 {
@@ -351,309 +416,167 @@ footer p {
   font-size: 12px;
 }
 
-
-/* EXTRA BOXES & COMPONENTS */
-.member-box {
-  padding: 18px;
-  border: 1px solid rgba(0, 217, 255, 0.15);
-  border-radius: 12px;
-  background: rgba(0, 217, 255, 0.03);
-}
-
-.member-box h5 {
-  color: var(--primary);
-  margin-bottom: 12px;
-  font-size: 16px;
-}
-
-.selected-problem {
-  padding: 10px 14px;
-  border-left: 3px solid var(--primary);
-  background: rgba(0, 217, 255, 0.05);
-  color: var(--text-muted);
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.live-problem-card {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 40px 25px;
-  text-align: center;
-  border: 1px solid rgba(0, 217, 255, 0.25);
-  border-radius: 18px;
-  background: rgba(0, 217, 255, 0.04);
-  box-shadow: 0 0 30px rgba(0, 217, 255, 0.08);
-}
-
-.live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  margin-bottom: 20px;
-  border-radius: 50px;
-  background: rgba(255, 60, 60, 0.1);
-  color: #ff5555;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff5555;
-  animation: livePulse 1.5s infinite;
-}
-
-.live-icon {
-  font-size: 45px;
-  color: var(--primary);
-  margin-bottom: 12px;
-}
-
-@keyframes livePulse {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.25); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-
-/* =========================
-   TECH QUIZ
-========================= */
-.quiz-section {
-  position: relative;
-}
-
-.quiz-access-card,
-.quiz-card,
-.quiz-result-card {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 35px 25px;
-  border: 1px solid rgba(0, 217, 255, 0.2);
-  border-radius: 18px;
-  background: rgba(0, 217, 255, 0.04);
-  box-shadow: 0 0 30px rgba(0, 217, 255, 0.08);
-}
-
-.quiz-access-card {
-  max-width: 500px;
-  text-align: center;
-}
-
-.quiz-lock-icon,
-.result-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(0, 217, 255, 0.1);
-  color: var(--primary);
-  font-size: 30px;
-}
-
-.quiz-access-card h3 {
-  margin-bottom: 8px;
-  font-size: 22px;
-}
-
-.quiz-access-card p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-.quiz-code-input {
-  text-align: center;
-  margin-bottom: 12px;
-  padding: 11px;
-}
-
-.quiz-btn {
-  padding: 11px 22px;
-  margin-top: 5px;
-  width: 100%;
-}
-
-.quiz-error {
-  color: #ff5555 !important;
-  font-size: 13px;
-  margin-bottom: 12px !important;
-}
-
-.quiz-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  color: var(--text-muted);
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.quiz-timer {
-  color: var(--primary);
-  font-size: 16px;
-}
-
-.quiz-progress {
-  height: 5px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  margin-bottom: 25px;
-  overflow: hidden;
-}
-
-.quiz-progress-bar {
-  height: 100%;
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-
-.quiz-question {
-  font-size: clamp(18px, 3vw, 24px);
-  margin-bottom: 25px;
-  line-height: 1.4;
-}
-
-.quiz-options {
-  display: grid;
-  gap: 12px;
-}
-
-.quiz-option {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  color: white;
-  text-align: left;
-  transition: 0.3s;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.quiz-option:hover {
-  border-color: var(--primary);
-  transform: translateY(-2px);
-}
-
-.quiz-option.selected {
-  border-color: var(--primary);
-  background: rgba(0, 217, 255, 0.1);
-}
-
-.option-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  border-radius: 50%;
-  background: rgba(0, 217, 255, 0.1);
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.quiz-next-btn {
-  margin-top: 25px;
-  width: 100%;
-}
-
-.quiz-next-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.quiz-result-card {
-  text-align: center;
-}
-
-.score-number {
-  font-size: clamp(40px, 8vw, 55px);
-  font-weight: 800;
-  color: var(--primary);
-  margin: 10px 0 0;
-}
-
-.score-percentage {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--primary) !important;
-}
-
-.quiz-finished-message {
-  margin-top: 15px;
-  color: var(--text-muted);
-  font-size: 14px;
-}
-
-
-/* RESPONSIVE MEDIA QUERIES */
-
+/* =====================================================
+   DESKTOP MEDIA QUERY
+   ===================================================== */
 @media (min-width: 769px) {
-  .quiz-next-btn {
-    width: auto;
-    float: right;
+  .hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
   }
-  
-  .quiz-btn {
-    width: auto;
+  .hero .row {
+    align-items: center;
   }
 }
 
+/* =====================================================
+   MOBILE & TABLET FIXES (768px and down)
+   ===================================================== */
 @media (max-width: 768px) {
-  .hero {
-    text-align: center;
-    padding-top: 110px;
+  /* 1. Navbar & Brand Sizing */
+  .navbar {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
   }
 
-  .hero-description {
-    margin: 0 auto;
+  .club-logo {
+    width: 48px !important;
+    height: 48px !important;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .brand-text strong {
+    font-size: 16px !important;
   }
 
-  .event-info {
-    justify-content: center;
-    gap: 20px;
+  .brand-text small {
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
   }
 
-  .logo-card {
-    margin-top: 30px;
+  .navbar-toggler {
+    padding: 8px 12px !important;
+    font-size: 1.3rem !important;
   }
 
-  .registration-box {
-    padding: 20px 15px;
+  .navbar-toggler-icon {
+    width: 1.4em !important;
+    height: 1.4em !important;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 11, 24, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 20px 24px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
   }
 
   .nav-link {
-    margin-left: 0;
-    padding: 8px 0;
+    margin-left: 0 !important;
+    font-size: 17px !important;
+    padding: 12px 0 !important;
+    font-weight: 600 !important;
   }
-}
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 32px;
+  /* 2. Hero Section & SMCET Logo */
+  .hero {
+    min-height: auto !important;
+    padding-top: 90px !important;
+    padding-bottom: 20px !important;
   }
-  
+
+  .hero .row {
+    align-items: flex-start !important;
+  }
+
+  .smcet-logo {
+    width: 220px !important;
+    max-width: 85% !important;
+    height: auto !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 7vw, 42px) !important;
+  }
+
+  .hero-tagline {
+    font-size: 18px !important;
+    margin-top: 10px !important;
+  }
+
+  .hero-description {
+    max-width: 100% !important;
+    margin: 10px auto 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-buttons {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 18px auto 0 !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .hero-buttons .btn {
+    width: 100% !important;
+  }
+
+  .event-badge {
+    font-size: 13px !important;
+    padding: 6px 14px !important;
+  }
+
+  /* 3. Event Info (2 Columns) */
+  .event-info {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+    text-align: left !important;
+  }
+
+  .event-info div {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* 4. Logo Card Adjustments */
+  .logo-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+    padding: 20px 16px !important;
+  }
+
+  .logo-card img {
+    max-width: 220px !important;
+  }
+
+  .logo-card .smcet-logo {
+    width: 180px !important;
+  }
+
+  /* 5. General Section & Component Padding */
+  .section-padding {
+    padding: 40px 15px !important;
+  }
+
+  .registration-box,
   .quiz-access-card,
   .quiz-card,
   .quiz-result-card,
-  .registration-box {
-    padding: 20px 12px;
+  .live-problem-card {
+    padding: 20px 15px !important;
   }
 }
