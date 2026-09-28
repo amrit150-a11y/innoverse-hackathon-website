@@ -6,7 +6,7 @@ The website allows participants to learn about the hackathon, view the live prob
 
 ## 🌐 Live Demo
 
-**Live Website:** https://innoverse-hackathon.vercel.app/
+**Live Website:** https://innoverse-hackathon-website.vercel.app/
 
 **GitHub Repository:** https://github.com/amrit150-a11y/innoverse-hackathon-website
 
